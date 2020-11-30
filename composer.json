@@ -1,0 +1,15 @@
+{
+    "name": "xonnex/adventofcode2020",
+    "authors": [
+        {
+            "name": "XonneX",
+            "email": "baumannjanik@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "XonneX\\AdventOfCode2020\\": "src/AdventOfCode2020"
+        }
+    }
+}
