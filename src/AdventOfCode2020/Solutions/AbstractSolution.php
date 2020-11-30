@@ -45,7 +45,7 @@ abstract class AbstractSolution
         return $this->partTwo($this->getInput());
     }
 
-    protected abstract function partOne(string $input): string;
+    abstract protected function partOne(string $input): string;
 
-    protected abstract function partTwo(string $input): string;
+    abstract protected function partTwo(string $input): string;
 }
