@@ -6,10 +6,17 @@
             "email": "baumannjanik@gmail.com"
         }
     ],
-    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^9.4"
+    },
     "autoload": {
         "psr-4": {
             "XonneX\\AdventOfCode2020\\": "src/AdventOfCode2020"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "XonneX\\AdventOfCode2020\\": "tests/AdventOfCode2020"
         }
     }
 }
