@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace XonneX\AdventOfCode2020\Solutions\Day2;
 
-use RuntimeException;
 use XonneX\AdventOfCode2020\Solutions\AbstractSolution;
 
 class Day2 extends AbstractSolution
