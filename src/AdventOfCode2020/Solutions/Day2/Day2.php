@@ -16,11 +16,46 @@ class Day2 extends AbstractSolution
 
     protected function partOne(string $input): string
     {
-        throw new RuntimeException('Not implemented yet');
+        $lines                = explode("\n", $input);
+        $validPasswordCounter = 0;
+
+        foreach ($lines as $line) {
+            preg_match('/(\d*)-(\d*) (\w): (\w*)/', $line, $matches);
+
+            [1 => $minOccurrences, 2 => $maxOccurrences, 3 => $letter, 4 => $subject] = $matches;
+
+            $occurrences = substr_count($subject, $letter);
+
+            if ($occurrences >= (int) $minOccurrences && $occurrences <= (int) $maxOccurrences) {
+                $validPasswordCounter++;
+            }
+        }
+
+        return (string) $validPasswordCounter;
     }
 
     protected function partTwo(string $input): string
     {
-        throw new RuntimeException('Not implemented yet');
+        $lines                = explode("\n", $input);
+        $validPasswordCounter = 0;
+
+        foreach ($lines as $line) {
+            preg_match('/(\d*)-(\d*) (\w): (\w*)/', $line, $matches);
+
+            [1 => $positionOne, 2 => $positionTwo, 3 => $letter, 4 => $subject] = $matches;
+
+            $letterPositionOne = substr($subject, (int) $positionOne - 1, 1);
+            $letterPositionTwo = substr($subject, (int) $positionTwo - 1, 1);
+
+            if ($letterPositionOne === $letter && $letterPositionTwo === $letter) {
+                continue;
+            }
+
+            if ($letterPositionOne === $letter || $letterPositionTwo === $letter) {
+                $validPasswordCounter++;
+            }
+        }
+
+        return (string) $validPasswordCounter;
     }
 }
