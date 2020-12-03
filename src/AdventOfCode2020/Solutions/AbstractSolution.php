@@ -28,11 +28,7 @@ abstract class AbstractSolution
 
     private function getInput(): string
     {
-        if ($this->debugInput !== null) {
-            return $this->debugInput;
-        }
-
-        return $this->input;
+        return $this->debugInput ?? $this->input;
     }
 
     public function solvePartOne(): string

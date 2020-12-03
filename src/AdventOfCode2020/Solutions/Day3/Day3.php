@@ -4,12 +4,10 @@ declare(strict_types=1);
 
 namespace XonneX\AdventOfCode2020\Solutions\Day3;
 
-use RuntimeException;
 use XonneX\AdventOfCode2020\Solutions\AbstractSolution;
 
 class Day3 extends AbstractSolution
 {
-    private const OPEN = '.';
     private const TREE = '#';
 
     public function __construct()
