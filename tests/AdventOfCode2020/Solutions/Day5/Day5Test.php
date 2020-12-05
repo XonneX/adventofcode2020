@@ -8,43 +8,28 @@ use PHPUnit\Framework\TestCase;
 
 class Day5Test extends TestCase
 {
+    /** @noinspection SpellCheckingInspection */
     public function testSolvePartOneExample(): void
     {
         $day5 = new Day5();
 
-        /** @noinspection SpellCheckingInspection */
-        $day5->setDebugInput(<<<TXT
-NO_EXAMPLE_INITIALIZED
-TXT
-        );
-
-        self::assertSame('NO_SOLUTION_INITIALIZED', $day5->solvePartOne());
+        self::assertSame(357, $day5->calculateSeatId('FBFBBFFRLR'));
+        self::assertSame(567, $day5->calculateSeatId('BFFFBBFRRR'));
+        self::assertSame(119, $day5->calculateSeatId('FFFBBBFRRR'));
+        self::assertSame(820, $day5->calculateSeatId('BBFFBBFRLL'));
     }
 
     public function testSolvePartOne(): void
     {
         $day5 = new Day5();
 
-        self::assertSame('NO_SOLUTION_INITIALIZED', $day5->solvePartOne());
-    }
-
-    public function testSolvePartTwoExample(): void
-    {
-        $day5 = new Day5();
-
-        /** @noinspection SpellCheckingInspection */
-        $day5->setDebugInput(<<<TXT
-NO_EXAMPLE_INITIALIZED
-TXT
-        );
-
-        self::assertSame('NO_SOLUTION_INITIALIZED', $day5->solvePartTwo());
+        self::assertSame('987', $day5->solvePartOne());
     }
 
     public function testSolvePartTwo(): void
     {
         $day5 = new Day5();
 
-        self::assertSame('NO_SOLUTION_INITIALIZED', $day5->solvePartTwo());
+        self::assertSame('603', $day5->solvePartTwo());
     }
 }
