@@ -12,39 +12,65 @@ class Day6Test extends TestCase
     {
         $day6 = new Day6();
 
-        /** @noinspection SpellCheckingInspection */
         $day6->setDebugInput(<<<TXT
-NO_EXAMPLE_INITIALIZED
+abc
+
+a
+b
+c
+
+ab
+ac
+
+a
+a
+a
+a
+
+b
 TXT
         );
 
-        self::assertSame('NO_SOLUTION_INITIALIZED', $day6->solvePartOne());
+        self::assertSame('11', $day6->solvePartOne());
     }
 
     public function testSolvePartOne(): void
     {
         $day6 = new Day6();
 
-        self::assertSame('NO_SOLUTION_INITIALIZED', $day6->solvePartOne());
+        self::assertSame('7128', $day6->solvePartOne());
     }
 
     public function testSolvePartTwoExample(): void
     {
         $day6 = new Day6();
 
-        /** @noinspection SpellCheckingInspection */
         $day6->setDebugInput(<<<TXT
-NO_EXAMPLE_INITIALIZED
+abc
+
+a
+b
+c
+
+ab
+ac
+
+a
+a
+a
+a
+
+b
 TXT
         );
 
-        self::assertSame('NO_SOLUTION_INITIALIZED', $day6->solvePartTwo());
+        self::assertSame('6', $day6->solvePartTwo());
     }
 
     public function testSolvePartTwo(): void
     {
         $day6 = new Day6();
 
-        self::assertSame('NO_SOLUTION_INITIALIZED', $day6->solvePartTwo());
+        self::assertSame('3640', $day6->solvePartTwo());
     }
 }
