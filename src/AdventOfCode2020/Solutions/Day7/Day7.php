@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace XonneX\AdventOfCode2020\Solutions\Day7;
 
-use RuntimeException;
 use XonneX\AdventOfCode2020\Solutions\AbstractSolution;
 
 class Day7 extends AbstractSolution
@@ -16,11 +15,81 @@ class Day7 extends AbstractSolution
 
     protected function partOne(string $input): string
     {
-        throw new RuntimeException('Not implemented yet');
+        $lines = explode("\n", $input);
+        $rules = [];
+
+        foreach ($lines as $line) {
+            $rules[] = BagRule::createRule($line);
+        }
+
+        /** @var BagRule[] $validBags */
+        $validBags = [];
+
+        /** @var BagRule[] $searchForBags */
+        $searchForBags = [
+            BagRule::createMainRule('shiny gold'),
+        ];
+
+        while (count($searchForBags) > 0) {
+            foreach ($searchForBags as $key => $searchForBag) {
+                foreach ($rules as $rule) {
+                    if ($rule->containsSubRule($searchForBag)) {
+                        $validBags[] = $rule;
+                        $searchForBags[] = $rule;
+                    }
+                }
+
+                unset($searchForBags[$key]);
+            }
+
+            $searchForBags = array_unique($searchForBags);
+        }
+
+        $validBags = array_unique($validBags);
+
+        foreach ($validBags as $key => $validBag) {
+            if ($validBag->isMain()) {
+                unset($validBags[$key]);
+            }
+        }
+
+        return (string) count($validBags);
     }
 
     protected function partTwo(string $input): string
     {
-        throw new RuntimeException('Not implemented yet');
+        $lines = explode("\n", $input);
+        $rules = [];
+
+        foreach ($lines as $line) {
+            $rules[] = BagRule::createRule($line);
+        }
+
+        /** @var BagRule[] $validBags */
+        $validBags = [];
+
+        /** @var BagRule[] $searchForBags */
+        $searchForBags = [
+            BagRule::createMainRule('shiny gold'),
+        ];
+
+        while (count($searchForBags) > 0) {
+            foreach ($searchForBags as $key => $searchForBag) {
+                foreach ($rules as $rule) {
+                    if ($rule->getType() === $searchForBag->getType()) {
+                        foreach ($rule->getSubRules() as $subRule) {
+                            for ($i = 0; $i < $subRule->getAmount(); $i++) {
+                                $validBags[] = $subRule;
+                                $searchForBags[] = $subRule;
+                            }
+                        }
+                    }
+                }
+
+                unset($searchForBags[$key]);
+            }
+        }
+
+        return (string) (count($validBags));
     }
 }
