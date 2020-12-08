@@ -12,39 +12,53 @@ class Day8Test extends TestCase
     {
         $day8 = new Day8();
 
-        /** @noinspection SpellCheckingInspection */
         $day8->setDebugInput(<<<TXT
-NO_EXAMPLE_INITIALIZED
+nop +0
+acc +1
+jmp +4
+acc +3
+jmp -3
+acc -99
+acc +1
+jmp -4
+acc +6
 TXT
         );
 
-        self::assertSame('NO_SOLUTION_INITIALIZED', $day8->solvePartOne());
+        self::assertSame('5', $day8->solvePartOne());
     }
 
     public function testSolvePartOne(): void
     {
         $day8 = new Day8();
 
-        self::assertSame('NO_SOLUTION_INITIALIZED', $day8->solvePartOne());
+        self::assertSame('1563', $day8->solvePartOne());
     }
 
     public function testSolvePartTwoExample(): void
     {
         $day8 = new Day8();
 
-        /** @noinspection SpellCheckingInspection */
         $day8->setDebugInput(<<<TXT
-NO_EXAMPLE_INITIALIZED
+nop +0
+acc +1
+jmp +4
+acc +3
+jmp -3
+acc -99
+acc +1
+jmp -4
+acc +6
 TXT
         );
 
-        self::assertSame('NO_SOLUTION_INITIALIZED', $day8->solvePartTwo());
+        self::assertSame('8', $day8->solvePartTwo());
     }
 
     public function testSolvePartTwo(): void
     {
         $day8 = new Day8();
 
-        self::assertSame('NO_SOLUTION_INITIALIZED', $day8->solvePartTwo());
+        self::assertSame('767', $day8->solvePartTwo());
     }
 }
