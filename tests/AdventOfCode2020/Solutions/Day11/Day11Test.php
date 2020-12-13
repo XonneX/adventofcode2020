@@ -14,18 +14,27 @@ class Day11Test extends TestCase
 
         /** @noinspection SpellCheckingInspection */
         $day11->setDebugInput(<<<TXT
-NO_EXAMPLE_INITIALIZED
+L.LL.LL.LL
+LLLLLLL.LL
+L.L.L..L..
+LLLL.LL.LL
+L.LL.LL.LL
+L.LLLLL.LL
+..L.L.....
+LLLLLLLLLL
+L.LLLLLL.L
+L.LLLLL.LL
 TXT
         );
 
-        self::assertSame('NO_SOLUTION_INITIALIZED', $day11->solvePartOne());
+        self::assertSame('37', $day11->solvePartOne());
     }
 
     public function testSolvePartOne(): void
     {
         $day11 = new Day11();
 
-        self::assertSame('NO_SOLUTION_INITIALIZED', $day11->solvePartOne());
+        self::assertSame('2438', $day11->solvePartOne());
     }
 
     public function testSolvePartTwoExample(): void
@@ -34,17 +43,26 @@ TXT
 
         /** @noinspection SpellCheckingInspection */
         $day11->setDebugInput(<<<TXT
-NO_EXAMPLE_INITIALIZED
+L.LL.LL.LL
+LLLLLLL.LL
+L.L.L..L..
+LLLL.LL.LL
+L.LL.LL.LL
+L.LLLLL.LL
+..L.L.....
+LLLLLLLLLL
+L.LLLLLL.L
+L.LLLLL.LL
 TXT
         );
 
-        self::assertSame('NO_SOLUTION_INITIALIZED', $day11->solvePartTwo());
+        self::assertSame('26', $day11->solvePartTwo());
     }
 
     public function testSolvePartTwo(): void
     {
         $day11 = new Day11();
 
-        self::assertSame('NO_SOLUTION_INITIALIZED', $day11->solvePartTwo());
+        self::assertSame('2174', $day11->solvePartTwo());
     }
 }
