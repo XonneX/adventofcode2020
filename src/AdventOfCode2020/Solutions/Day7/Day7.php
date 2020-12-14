@@ -56,6 +56,7 @@ class Day7 extends AbstractSolution
         return (string) count($validBags);
     }
 
+// TODO: Performance rewrite high priority
     protected function partTwo(string $input): string
     {
         $lines = explode("\n", $input);

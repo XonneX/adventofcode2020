@@ -12,39 +12,53 @@ class Day12Test extends TestCase
     {
         $day12 = new Day12();
 
-        /** @noinspection SpellCheckingInspection */
         $day12->setDebugInput(<<<TXT
-NO_EXAMPLE_INITIALIZED
+F10
+N3
+F7
+R90
+F11
 TXT
         );
 
-        self::assertSame('NO_SOLUTION_INITIALIZED', $day12->solvePartOne());
+        self::assertSame('25', $day12->solvePartOne());
+    }
+
+    public function testSolvePartOneWrong(): void
+    {
+        $day12 = new Day12();
+
+        self::assertNotSame('761', $day12->solvePartOne());
+        self::assertTrue($day12->solvePartOne() > 761);
     }
 
     public function testSolvePartOne(): void
     {
         $day12 = new Day12();
 
-        self::assertSame('NO_SOLUTION_INITIALIZED', $day12->solvePartOne());
+        self::assertSame('1565', $day12->solvePartOne());
     }
 
     public function testSolvePartTwoExample(): void
     {
         $day12 = new Day12();
 
-        /** @noinspection SpellCheckingInspection */
         $day12->setDebugInput(<<<TXT
-NO_EXAMPLE_INITIALIZED
+F10
+N3
+F7
+R90
+F11
 TXT
         );
 
-        self::assertSame('NO_SOLUTION_INITIALIZED', $day12->solvePartTwo());
+        self::assertSame('286', $day12->solvePartTwo());
     }
 
     public function testSolvePartTwo(): void
     {
         $day12 = new Day12();
 
-        self::assertSame('NO_SOLUTION_INITIALIZED', $day12->solvePartTwo());
+        self::assertSame('78883', $day12->solvePartTwo());
     }
 }

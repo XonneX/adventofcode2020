@@ -33,6 +33,7 @@ class Day2 extends AbstractSolution
         return (string) $validPasswordCounter;
     }
 
+    // TODO: Performance rewrite low priority
     protected function partTwo(string $input): string
     {
         $lines                = explode("\n", $input);

@@ -13,8 +13,8 @@ use function str_split;
 
 class Day11 extends AbstractSolution
 {
-    private const EMPTY_SEAT    = 'L';
-    private const FLOOR         = '.';
+    private const EMPTY_SEAT = 'L';
+    private const FLOOR = '.';
     private const OCCUPIED_SEAT = '#';
 
     public function __construct()
@@ -22,6 +22,7 @@ class Day11 extends AbstractSolution
         parent::__construct(2020, 11);
     }
 
+    // TODO: Performance rewrite low priority
     protected function partOne(string $input): string
     {
         $lines = explode("\n", $input);
@@ -72,6 +73,7 @@ class Day11 extends AbstractSolution
         return (string) $counter;
     }
 
+    // TODO: Performance rewrite medium priority
     protected function partTwo(string $input): string
     {
         $lines = explode("\n", $input);
